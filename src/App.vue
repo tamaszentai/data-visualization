@@ -1,23 +1,26 @@
 <template>
   <div>
+    <Header/>
     <h1>Data Visualization</h1>
-    <line-charts
+    <chart
       :chartData="[DM, OOH, PPC, TV]"
       :options="chartOptions"
       :label="labels"
       :colors="colors"
-    ></line-charts>
+    ></chart>
   </div>
 </template>
 
 <script>
 import json from "./jstest";
-import LineCharts from "./components/Chart.vue";
+import Header from "./components/Header.vue";
+import Chart from "./components/Chart.vue";
 
 export default {
   name: "App",
   components: {
-    LineCharts,
+    Header,
+    Chart,
   },
   data() {
     return {
@@ -39,7 +42,6 @@ export default {
 
 <style>
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
@@ -47,7 +49,10 @@ export default {
   margin-top: 60px;
 }
 body {
+  font-family: 'Roboto', sans-serif;
   background-color: lightblue;
+  margin: 0;
+  padding: 0;
 }
 h1 {
   color: royalblue;
