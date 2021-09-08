@@ -1,6 +1,7 @@
 <template>
   <div>
-    <line-charts :chartData="DM" :options="chartOptions" label="DM"></line-charts>
+    <h1>Data Visualization</h1>
+    <line-charts :chartData="[DM, OOH, PPC, TV]" :options="chartOptions" :label="labels" :colors="colors"></line-charts>
   </div>
 </template>
 
@@ -24,13 +25,14 @@ export default {
       chartOptions: {
         responsive: true,
         maintainAspectRatio: false
-      }
+      },
+      labels: ["DM", "OOH", "PPC", "TV"],
+      colors: ["green", "yellow", "blue", "red"]
     }
   },
   computed: {
   }
 }
-console.log(json)
 </script>
 
 <style>
@@ -41,5 +43,12 @@ console.log(json)
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
+}
+body {
+  background-color: lightblue;
+}
+h1 {
+  color: royalblue;
+  text-align: center;
 }
 </style>
