@@ -1,23 +1,23 @@
 <script>
-import { Line } from 'vue-chartjs'
+import { Line } from "vue-chartjs";
 
 export default {
-   extends: Line,
+  extends: Line,
   props: {
     label: {
-      type: Array
+      type: Array,
     },
     chartData: {
-      type: Array
+      type: Array,
     },
     options: {
-      type: Object
+      type: Object,
     },
     colors: {
-      type: Array
-    }
+      type: Array,
+    },
   },
-  mounted () {
+  mounted() {
     this.renderChart(
       {
         labels: [...Array(52).keys()],
@@ -27,25 +27,25 @@ export default {
             data: this.chartData[0],
             backgroundColor: this.colors[0],
           },
-           {
+          {
             label: this.label[1],
             data: this.chartData[1],
             backgroundColor: this.colors[1],
           },
-           {
+          {
             label: this.label[2],
             data: this.chartData[2],
             backgroundColor: this.colors[2],
           },
-           {
+          {
             label: this.label[3],
             data: this.chartData[3],
             backgroundColor: this.colors[3],
-          }
-        ]
+          },
+        ],
       },
       this.options
     );
-  }
-}
+  },
+};
 </script>

@@ -1,19 +1,23 @@
 <template>
   <div>
     <h1>Data Visualization</h1>
-    <line-charts :chartData="[DM, OOH, PPC, TV]" :options="chartOptions" :label="labels" :colors="colors"></line-charts>
+    <line-charts
+      :chartData="[DM, OOH, PPC, TV]"
+      :options="chartOptions"
+      :label="labels"
+      :colors="colors"
+    ></line-charts>
   </div>
 </template>
 
 <script>
-
-import json from './jstest';
-import LineCharts from './components/Chart.vue';
+import json from "./jstest";
+import LineCharts from "./components/Chart.vue";
 
 export default {
-  name: 'App',
+  name: "App",
   components: {
-    LineCharts
+    LineCharts,
   },
   data() {
     return {
@@ -24,15 +28,13 @@ export default {
       TV: json.TV,
       chartOptions: {
         responsive: true,
-        maintainAspectRatio: false
+        maintainAspectRatio: false,
       },
       labels: ["DM", "OOH", "PPC", "TV"],
-      colors: ["green", "yellow", "blue", "red"]
-    }
+      colors: ["green", "yellow", "blue", "red"],
+    };
   },
-  computed: {
-  }
-}
+};
 </script>
 
 <style>
