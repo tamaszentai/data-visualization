@@ -8,7 +8,7 @@
 <script>
 
 import json from './jstest';
-import LineCharts from './components/LineCharts.vue';
+import LineCharts from './components/Chart.vue';
 
 export default {
   name: 'App',
