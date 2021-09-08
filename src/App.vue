@@ -1,19 +1,36 @@
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div>
+    <line-charts :chartData="DM" :options="chartOptions" label="DM"></line-charts>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+
+import json from './jstest';
+import LineCharts from './components/LineCharts.vue';
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    LineCharts
+  },
+  data() {
+    return {
+      data: json,
+      DM: json.DM,
+      OOH: json.OOH,
+      PPC: json.PPC,
+      TV: json.TV,
+      chartOptions: {
+        responsive: true,
+        maintainAspectRatio: false
+      }
+    }
+  },
+  computed: {
   }
 }
+console.log(json)
 </script>
 
 <style>
